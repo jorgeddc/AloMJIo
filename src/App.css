@@ -19,10 +19,19 @@
   width:100%;
   height:auto;
   display:flex;
-  justify-content: center;
+  flex-direction:column;
+   
+  justify-content:;
   align-items: center;
 
 
+}
+.contador {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:90px;
+  font-weight:bold;
+  position:absolute;
+  top:400px;
 }
  @media (prefers-reduced-motion: no-preference) {
   .emoji {

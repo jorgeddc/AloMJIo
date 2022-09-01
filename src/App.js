@@ -7,6 +7,7 @@ import { data as emojiList } from './components/Data';
 
 function App() {
   const [valor,setValor] = useState(emojiList);
+  const [contador,setContador] = useState(0);
   const [numero , setNumero] = useState(0);
   const colorBody = useRef(null);
   const colorBodyAngle = useRef(null);
@@ -46,12 +47,13 @@ const handleClickGreen= () =>
 
   
 }
-  const handleClick = () =>{
+  const handleClick =()=>{
+   setContador(contador+1)
    setNumero(numero+1)
 
    if(numero === valor.length -1)
     setNumero(0)
-   console.log(numero)
+  
   }
 
   return (
@@ -61,15 +63,18 @@ const handleClickGreen= () =>
                <div className='circle2' onClick={handleClickRed}></div>
                <div className='circle3'  onClick={handleClickYellow}></div>
                <div className='circle4' onClick={handleClickGreen}></div>
+               
           
+         
          </div>
         <div className='container' ref={colorBodyAngle}>{
      
          (<div className='container_emoji' ref={colorBody}>
            <p className='emoji'onClick={handleClick}>{valor[numero].symbol}</p>
+          <p className='contador'>{contador}</p>
          </div>)
          
-         
+        
         
         }
       
